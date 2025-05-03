@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tbl_events")
+@Table(name = "tbl_event")
 public class Event {
 
     @Id
@@ -42,19 +42,6 @@ public class Event {
 
     @Column(name = "end_time")
     private LocalTime endTime;
-
-    public Event(Integer id, String title, String prettyName, String location, double price, LocalDate starDate,
-            LocalDate endDate, LocalTime startTime, LocalTime endTime) {
-        this.id = id;
-        this.title = title;
-        this.prettyName = prettyName;
-        this.location = location;
-        this.price = price;
-        this.starDate = starDate;
-        this.endDate = endDate;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
 
     public Integer getId() {
         return id;
@@ -109,12 +96,5 @@ public class Event {
     }
     public void setEndTime(LocalTime endTime) {
         this.endTime = endTime;
-    }
-
-    @Override
-    public String toString() {
-        return "Event [id=" + id + ", title=" + title + ", prettyName=" + prettyName + ", location=" + location
-                + ", price=" + price + ", starDate=" + starDate + ", endDate=" + endDate + ", startTime=" + startTime
-                + ", endTime=" + endTime + "]";
     }
 }
